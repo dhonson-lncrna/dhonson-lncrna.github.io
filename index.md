@@ -4,4 +4,4 @@
 2. Thing 2
 3. Thing 3
 
-[A link!](https://dhonson-lncrna.github.io/)
+Find my protocols [here!](dhonson-lncrna.github.io/protocols.md)
