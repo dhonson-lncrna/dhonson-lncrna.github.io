@@ -1,3 +1,6 @@
 theme: jekyll-theme-cayman
 title: Welcome to Drew Honson's homepage!
 description: New projects and protocols posted here
+include:
+ - index.html
+ - test.md
