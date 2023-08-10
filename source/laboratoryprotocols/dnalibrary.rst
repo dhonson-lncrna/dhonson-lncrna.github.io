@@ -277,12 +277,12 @@ In the future, I will add a more detailed guide on Illumina sequencing, but for 
 
 3. Using a razor blade, cut libraries between 200-1000bp. Transfer excised agarose to a clean 1.7mL tube
 
-.. image:: images/22.10.03_LibPools.png
+.. figure:: images/22.10.03_LibPools.png
    :width: 600
    :alt: Pre- and post-gel cut libraries
    :align: center
 
-*Example libraries before and after gel-cutting.*
+   *Example libraries before and after gel-cutting.*
 
 4. Tare a balance with an empty 1.7mL tube. Mass the excised agarose, then add 3µl Zymo ADB Buffer per 1mg agarose gel (e.g. 300µl ABD for a 100mg gel)
 
