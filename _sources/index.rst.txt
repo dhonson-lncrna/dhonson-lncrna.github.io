@@ -8,10 +8,12 @@ Introduction
 
 My name is Drew Honson. I am a fifth year graduate student in the laboratory of Mitch Guttman at Caltech. I am creating this website to share wet lab protocols and software packages for molecular biology that I have written. My hope is to provide inexpensive replacements to common kits and well-documented code to support reproducible reagent generation and data analysis.
 
-.. image:: images/argusbird.jpg
+.. figure:: images/argusbird.jpg
    :width: 600
+   :alt: *Argus bird plumage. Taken at the Kunsthistorisches Museum Vienna*
+   :align: center
 
-*Argus bird plumage. Taken at the Kunsthistorisches Museum Vienna*
+   *Argus bird plumage. Taken at the Kunsthistorisches Museum Vienna*
 
 .. toctree::
    :maxdepth: 1
