@@ -7,6 +7,7 @@ Buffers and Consumables
 -----------------------
 
 **GuSCN Lysis Buffer**
+
    4M guanidinium thiocyanate (GuSCN)
 
    55mM Tris-HCl, pH 7.5
@@ -16,6 +17,7 @@ Buffers and Consumables
    3% Triton X-100
 
 **Wash Buffer 1**
+
    20% ethanol
 
    900mM GuSCN
@@ -23,6 +25,7 @@ Buffers and Consumables
    10mM Tris-HCl, pH 7.5
 
 **Wash Buffer 2**
+
    80% ethanol
 
    100mM NaCl
@@ -56,7 +59,7 @@ RNA Miniprep Protocol
      * - 5-10M
        - 600
 
-2. Add one volume 70% ethanol to lysate
+2. Add one volume 70% ethanol to lysate.
 
 3. Transfer 700µl sample to Zymo IIC column. Spin 15s, >12,000g. Discard flow-through and repeat for any remaining sample.
 
@@ -97,4 +100,4 @@ Hazards and Waste Disposal
 
 * GuSCN is a powerful chaotrope. Always wear gloves and a labcoat when handling GuSCN. Do not open solid GuSCN outside of a fume hood and dispose of all liquid and solid waste in dedicated containers.
 
-* Under acidic conditions GuSCN solutions release hydrogen cyanide gas. Always use caution when preparing GuSCN solutions.
+* GuSCN solutions release hydrogen cyanide gas when exposed to acids or oxidizers such as bleach. Always use caution when preparing or disposing of GuSCN solutions.
