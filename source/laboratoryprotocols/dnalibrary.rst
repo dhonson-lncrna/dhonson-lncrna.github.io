@@ -172,13 +172,13 @@ Adapter Ligation
 
    f. Allow beads to separate completely and remove supernatant.
 
-   g. Repeat steps e. and f. 2 more times for a total of 3 washes.
+   g. Repeat steps e. and f. twice more for a total of 3 washes.
 
    h. After removing final ethanol wash, briefly pop-spin the tubes. Place on the magnet and use a P20 pipette to remove any residual ethanol.
 
    i. Dry beads 2-5min until they look matte.
 
-   j. Resuspend beads in **50µl** nuclease-free water to elute.
+   j. Resuspend beads in **50µl** nuclease-free water to elute. Magnetically pellet the beads and transfer the supernatant to a clean tube.
 
 4. Repeat 1x SPRI clean in step 3 using 50µl room-temperature SPRI beads. This ensures that nearly all adapter is removed. Elute in **50µl** water. 22.5µl will be used for amplification, and the rest will be saved in case of over-amplification.
 
@@ -241,13 +241,13 @@ Library Amplification
 
    f. Allow beads to separate completely and remove supernatant.
 
-   g. Repeat steps e. and f. 2 more times for a total of 3 washes.
+   g. Repeat steps e. and f. twice more for a total of 3 washes.
 
    h. After removing final ethanol wash, briefly pop-spin the tubes. Place on the magnet and use a P20 pipette to remove any residual ethanol.
 
    i. Dry beads 2-5min until they look matte.
 
-   j. Resuspend beads in **13µl** nuclease-free water to elute.
+   j. Resuspend beads in **13µl** nuclease-free water to elute. Magnetically pellet the beads and transfer the supernatant to a clean tube.
 
 Library Diagnostics
 -------------------

@@ -19,5 +19,7 @@ My name is Drew Honson. I am a fifth year graduate student in the laboratory of 
    :maxdepth: 1
    :caption: Laboratory Protocols
 
-   laboratoryprotocols/rnamini
    laboratoryprotocols/dnalibrary
+   laboratoryprotocols/rnamini
+   laboratoryprotocols/silane
+   
