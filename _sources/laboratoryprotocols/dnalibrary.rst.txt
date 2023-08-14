@@ -8,7 +8,7 @@ This protocol describes how to make dual-indexed Illumina sequencing libraries f
    :alt: Schematic of DNA lib workflow
    :align: center
 
-   *Schematic of library prep workflow*
+   *Schematic of library prep workflow. i5 is on the left side (green) while i7 is on the right (orange).*
 
 .. raw:: html
 

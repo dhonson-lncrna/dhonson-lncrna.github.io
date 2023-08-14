@@ -9,7 +9,7 @@ The workflow begins by fragmenting RNA to sizes between 100-1000bp and dephospho
    :alt: Schematic of RNA lib workflow
    :align: center
 
-   *Schematic of library prep workflow*
+   *Schematic of library prep workflow. i5 is on the left side (green) while i7 is on the right (orange).*
 
 .. raw:: html
 
