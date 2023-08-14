@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNA Library Preparation &mdash; Drew Honson 0.0.0 documentation</title>
+  <title>RNA Library Preparation &mdash; Drew Honson 0.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="RNA Library Preparation" href="rnalibrary.html" />
-    <link rel="prev" title="Introduction" href="../index.html" /> 
+    <link rel="next" title="RNA Miniprep" href="rnamini.html" />
+    <link rel="prev" title="DNA Library Preparation" href="dnalibrary.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,14 +45,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Laboratory Protocols</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">DNA Library Preparation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="dnalibrary.html">DNA Library Preparation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RNA Library Preparation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#buffers-and-consumables">Buffers and Consumables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#for-library-diagnostics">For Library Diagnostics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#for-final-library-preparation">For Final Library Preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#adapter-annealing">Adapter Annealing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#end-repair">End Repair</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#da-tailing">dA Tailing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adapter-ligation">Adapter Ligation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragmentation-and-end-repair">Fragmentation and End Repair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rna-ligation">RNA Ligation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reverse-transcription">Reverse Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cdna-splint-ligation">cDNA Splint Ligation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#library-amplification">Library Amplification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#library-diagnostics">Library Diagnostics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#final-library-preparation">Final Library Preparation</a></li>
@@ -60,7 +60,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#hazards-and-waste-disposal">Hazards and Waste Disposal</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rnalibrary.html">RNA Library Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rnamini.html">RNA Miniprep</a></li>
 <li class="toctree-l1"><a class="reference internal" href="silane.html">Silane Nucleic Acid Purification</a></li>
 </ul>
@@ -79,9 +78,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">DNA Library Preparation</li>
+      <li class="breadcrumb-item active">RNA Library Preparation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/laboratoryprotocols/dnalibrary.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/laboratoryprotocols/rnalibrary.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -89,20 +88,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dna-library-preparation">
-<h1>DNA Library Preparation<a class="headerlink" href="#dna-library-preparation" title="Permalink to this heading"></a></h1>
-<p>This protocol describes how to make dual-indexed Illumina sequencing libraries from fragmented DNA (e.g. ChIP-seq or RAP-DNA libraries). It is an adaptation of the NEBNext DNA library preparation kit and uses some of the same components. The resultant libraries should be sequenced with settings for Illumina’s Nextera XT kit.</p>
+  <section id="rna-library-preparation">
+<h1>RNA Library Preparation<a class="headerlink" href="#rna-library-preparation" title="Permalink to this heading"></a></h1>
+<p>This protocol describes how to generate Illumina sequencing libraries from total RNA. For already fragmented RNA (e.g. from eCLIP) the initial fragmentation step can be omitted. The earliest version of this protocol I can find is from Jesse Engreitz’s 2013 paper <a class="reference external" href="https://doi.org/10.1126/science.1237973">“The Xist lncRNA Exploits Three-Dimensional Genome Architecture to Spread Across the X Chromosome”</a> but it has undergone many improvements over the subsequent years thanks to the work of numerous scientists in the Guttman lab. I’m presenting it here not to claim credit, but rather to increase distribution of the protocol. Additionally, the <a class="reference external" href="https://dhonson-lncrna.github.io/laboratoryprotocols/dnalibrary.html">DNA Library Preparation protocol</a> (which I did write) seems lonely without its RNA partner.</p>
+<p>The workflow begins by fragmenting RNA to sizes between 100-1000bp and dephosphorylating the fragments. A common adapter is then ligated to the 3’-end of the RNA to allow for reverse transcription (RT) with a common primer. After RT, the cDNA has an i7 amplifiable 5’-end. The next step is ligate a splint to the 3’-end of the cDNA to permit amplification with an i5 primer. After removing excess splint, the RNA is ready for PCR amplification with Nextera XT primers.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/23.08.14_DNA-Lib-Fig.png"><img alt="Schematic of DNA lib workflow" src="../_images/23.08.14_DNA-Lib-Fig.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/23.08.11_RNA-Lib-Fig.png"><img alt="Schematic of RNA lib workflow" src="../_images/23.08.11_RNA-Lib-Fig.png" style="width: 600px;" /></a>
 <figcaption>
 <p><span class="caption-text"><em>Schematic of library prep workflow</em></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <br><section id="buffers-and-consumables">
 <h2>Buffers and Consumables<a class="headerlink" href="#buffers-and-consumables" title="Permalink to this heading"></a></h2>
-<p><strong>Zymo DNA Binding Buffer</strong></p>
+<p><strong>ThermoFisher Fast AP (alkaline phosphatase) and 10x Fast AP buffer</strong></p>
+<p><strong>Ribolock or other RNase inhibitor</strong></p>
+<p><strong>NEB T4 PNK (Phosphonucleotide Kinase) and 10x T4 PNK buffer</strong></p>
+<p><strong>NEB T4 High Concentration RNA Ligase and 10x T4 RNA Ligase buffer</strong></p>
+<p><strong>100mM ATP</strong></p>
+<p><strong>50% PEG8000</strong></p>
+<p><strong>ThermoFisher Maxima H Minus RT and 5x RT buffer</strong></p>
 <blockquote>
-<div><p>I’m currently testing an in-house formulation of this</p>
+<div><p>The exact reverse transcriptase is flexible but it must <strong>lack</strong> RNaseH activity</p>
+</div></blockquote>
+<p><strong>10mM dNTP Mix</strong></p>
+<p><strong>NEB Exonuclease I</strong></p>
+<p><strong>0.5M EDTA, pH8.0</strong></p>
+<p><strong>1M NaOH</strong></p>
+<p><strong>1M HCl</strong></p>
+<p><strong>DMSO</strong></p>
+<p><strong>100% ethanol</strong></p>
+<p><strong>80% ethanol</strong></p>
+<p><strong>Zymo RNA Binding Buffer</strong></p>
+<blockquote>
+<div><p>I am working on an in-house formulation for this.</p>
+</div></blockquote>
+<p><strong>Zymo RNA Prep Buffer</strong></p>
+<blockquote>
+<div><p>I am working on an in-house formulation for this</p>
 </div></blockquote>
 <p><strong>Wash Buffer 2</strong></p>
 <blockquote>
@@ -110,106 +132,164 @@
 <p>100mM NaCl</p>
 <p>10mM Tris-HCl, pH7.5</p>
 </div></blockquote>
+<p><strong>GuSCN Lysis Buffer</strong></p>
+<blockquote>
+<div><p>4M guanidinium thiocyanate (GuSCN)</p>
+<p>55mM Tris-HCl, pH 7.5</p>
+<p>25mM EDTA</p>
+<p>3% Triton X-100</p>
+</div></blockquote>
 <p><strong>10x Annealing Buffer</strong></p>
 <blockquote>
 <div><p>100mM Tris-HCl, pH 7.5</p>
 <p>2M LiCl</p>
 </div></blockquote>
-<p><strong>NEBNext End Repair Module</strong></p>
-<p><strong>NEBNext 10x dA-Tailing Buffer</strong></p>
-<p><strong>NEBNext Klenow Fragment (exo-)</strong></p>
-<p><strong>NEB 2x Q5 High-Fidelity 2x Master Mix</strong></p>
 <p><strong>NEB 2x Instant Sticky-End Master Mix</strong></p>
-<p><strong>SPRI beads, prewarmed to room temperature</strong></p>
+<p><strong>NEB 2x Q5 High Fidelity Master Mix</strong></p>
 <p><strong>Zymo IC Columns</strong></p>
 <p><strong>Zymo Collection Tubes</strong></p>
-<p><strong>Nextera XT i5i7 Y-adapt TOP:</strong> /5Phos/GATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT</p>
-<p><strong>Nextera XT  Y-adapt BOT:</strong> GTGACTGGAGTTCAGACGTGT[GCTCTTCCGATC]T</p>
+<p><strong>ThermoFisher Dynabeads MyOne Silane</strong></p>
+<p><strong>SPRI beads (Beckman Coulter or Bulldog Bio)</strong></p>
 <p><strong>Nextera XT i7 F and i5 R primers, 12.5µM mix (see Protocol Notes)</strong></p>
-</section>
-<section id="for-library-diagnostics">
-<h2>For Library Diagnostics<a class="headerlink" href="#for-library-diagnostics" title="Permalink to this heading"></a></h2>
-<p><strong>Qubit HS DNA kit or other high-sensitivity spectrophotometer</strong></p>
-<p><strong>TapeStation, Bioanalyzer, or other high sensitivity electrophoresis instrument</strong></p>
-</section>
-<section id="for-final-library-preparation">
-<h2>For Final Library Preparation<a class="headerlink" href="#for-final-library-preparation" title="Permalink to this heading"></a></h2>
-<p><strong>1-2% agarose gel</strong></p>
-<p><strong>Zymo ADB Buffer</strong></p>
-<blockquote>
-<div><p>I’m currently testing an in-house version of this. I’m pretty sure it’s 4M NaI</p>
-</div></blockquote>
+<p><strong>RiL19 (RNA Ligation Adapter): /5Phos/rArGrArUrCrGrGrArArGrArGrCrGrUrCrGrUrG/ddC</strong></p>
+<p><strong>AR17 (RT Primer): ACACGACGCTCTTCCGA</strong></p>
+<p><strong>3Tr3 Splint TOP (cDNA ligation adapter): CAGACGTGTGCTCTTCCGATCTNNNNNN/3SpC3/</strong></p>
+<p><strong>3Tr3 Splint BOT (cDNA ligation adapter): /5Phos/AGATCGGAAGAGCACACGTCTG</strong></p>
 </section>
 <section id="adapter-annealing">
 <h2>Adapter Annealing<a class="headerlink" href="#adapter-annealing" title="Permalink to this heading"></a></h2>
-<p>The Y-adapt TOP and BOT contain overhangs for the Nextera Illumina primers. Y-adapt TOP contains the i5 sequence while BOT contains the i7 sequence. The sequence in brackets in Broad i5i7 Y-adapt BOT anneals to Y-adapt TOP. After annealing, the product contains a 3’-T overhang for ligation to end-repaired and dA-tailed DNA fragments.</p>
+<p>3Tr3 splint adds a 3’-overhang for the Nextera Illumina i5 primer set following ligation to cDNA.</p>
 <ol class="arabic">
-<li><p>Y-adapter Annealing Reaction</p>
-<p>18µl 222µM Broad i5i7 Y-adapt TOP</p>
-<p>18µl 222µM Broad i5i7 Y-adapt BOT</p>
+<li><p>3Tr3 Annealing Reaction</p>
+<p>18µl 100µM 3Tr3 Splint TOP</p>
+<p>18µl 100µM 3Tr3 Splint BOT</p>
 <p>4µl 10x annealing buffer</p>
 </li>
 <li><p>Heat reactions to 95°C on a thermocycler, then ramp down to 25°C, 5°C decrease per 15sec.</p></li>
-<li><p>Place the reactions on ice. Adapters are now at 100µM. Take an aliquot of the annealed adapter and dilute to 10µM using TE buffer or nuclease-free water. Store annealed adapter at -20°C.</p></li>
+<li><p>Place the reactions on ice. Adapters are now at 45µM. Take an aliquot of the annealed adapter and dilute to 4.5µM using TE buffer or nuclease-free water. Store annealed adapter at -20°C.</p></li>
 </ol>
 </section>
-<section id="end-repair">
-<h2>End Repair<a class="headerlink" href="#end-repair" title="Permalink to this heading"></a></h2>
+<section id="fragmentation-and-end-repair">
+<h2>Fragmentation and End Repair<a class="headerlink" href="#fragmentation-and-end-repair" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
-<li><p>End Repair Reaction</p>
-<p>16.5µl dsDNA, fragmented to 100-1000bp (≤ 5µg)</p>
-<p>2µl NEBNext End Repair Buffer</p>
-<p>1.5µl NEBNext End Repair Enzymes</p>
+<li><p>RNA Fragmentation Mix</p>
+<p>25ng-1µg RNA</p>
+<p>2µl 10x Fast AP Buffer</p>
+<p>Water to 18µl</p>
 </li>
-<li><p>Incubate 30min, 25°C.</p></li>
+<li><p>Heat 91°C, 2min30s then cool to 4°C.</p></li>
+<li><p>Add 1µl Fast AP and 1µl RNase inhibitor. Incubate 10min, 37°C.</p></li>
+<li><p>Dephosphorylation Reaction</p>
+<p>20µl Fast AP reaction</p>
+<p>3µl 10x T4 PNK Buffer</p>
+<p>3µl T4 PNK</p>
+<p>4µl water</p>
+</li>
+<li><p>Incubate 10min, 37°C.</p></li>
 <li><p>Column clean the reaction.</p>
 <ol class="loweralpha simple">
-<li><p>Add 5x volume (100µl) DNA binding buffer.</p></li>
+<li><p>Add 2x volume (60µl) RNA binding buffer.</p></li>
+<li><p>Add 1x volume (90µl) 100% ethanol.</p></li>
 <li><p>Invert 5-10 times to mix then pop spin briefly.</p></li>
 <li><p>Transfer solution to a Zymo IC column. Spin &gt;8000g, 15s.</p></li>
 <li><p>Discard flow through.</p></li>
-<li><p>Add 200µl DNA/RNA Wash Buffer. Spin &gt;8000g, 15s.</p></li>
+<li><p>Add 400µl RNA Prep Buffer. Spin &gt;8000g, 15s.</p></li>
 <li><p>Discard flow through.</p></li>
-<li><p>Add 200µl DNA/RNA Wash Buffer. Spin &gt;8000g, 15s.</p></li>
+<li><p>Add 500µl Wash Buffer 2. Spin &gt;8000g, 15s.</p></li>
+<li><p>Discard flow through.</p></li>
+<li><p>Add 500µl Wash Buffer 2. Spin &gt;8000g, 15s.</p></li>
 <li><p>Transfer column to a clean 1.7mL tube.</p></li>
-<li><p>Add <strong>16.5µl</strong> water. Spin 8000-16,000g, 1min.</p></li>
+<li><p>Add <strong>12µl</strong> water. Spin 8000-16,000g, 1min.</p></li>
 </ol>
 </li>
 </ol>
 </section>
-<section id="da-tailing">
-<h2>dA Tailing<a class="headerlink" href="#da-tailing" title="Permalink to this heading"></a></h2>
+<section id="rna-ligation">
+<h2>RNA Ligation<a class="headerlink" href="#rna-ligation" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
-<li><p>dA Tailing Reaction</p>
-<p>16.5µl end-repeaired DNA</p>
-<p>2µl NEBNext 10x dA Tailing Buffer</p>
-<p>1.5µl NEBNext Klenow exo-</p>
+<li><p>Mix 1.5µl DMSO and 1µl 20µM RNA Ligation Adapter.</p></li>
+<li><p>Add 10µl fragmented and end repaired RNA to DMSO/adapter mix.</p></li>
+<li><p>Heat 2min, 65°C then cool to 4°C.</p></li>
+<li><p>Prepare Ligation Master Mix. After mixing, mix the reaction by flicking the tube until it splits into many droplets. Pop-spin the tube to gather the liquid. Repeat this 4-5 times to thoroughly mix. This step is essential due to the viscosity of PEG8000.</p>
+<p>2µl 10x T4 RNA Ligase Buffer</p>
+<p>0.2µl 100mM ATP</p>
+<p>6µl 50% PEG8000, pre-warmed to 37°C</p>
+<p>0.3µl RNase inhibitor</p>
+<p>0.3µl T4 High Concentration RNA Ligase</p>
 </li>
-<li><p>Incubate 30min, 37°C.</p></li>
-<li><p>Column clean the reaction.</p>
+<li><p>Add 8.8µl Ligation Master Mix to 12.5µl RNA/adapter mix.</p></li>
+<li><p>Mix reaction by flicking and spinnning as done with the master mix.</p></li>
+<li><p>Add an additional 1µl T4 High Concentration RNA Ligase. Mix reaction by flicking and spinning.</p></li>
+<li><p>Incubate 1h15m, 25°C, 1600rpm shaking (1min ON, 5min OFF)</p></li>
+<li><p>Clean using Silane beads. For a more detailed description, see <a class="reference external" href="https://dhonson-lncrna.github.io/laboratoryprotocols/silane.html">Silane Nucleic Acid Purification.</a></p>
 <ol class="loweralpha simple">
-<li><p>Add 5x volume (100µl) DNA binding buffer.</p></li>
-<li><p>Invert 5-10 times to mix then pop spin briefly.</p></li>
-<li><p>Transfer solution to a Zymo IC column. Spin &gt;8000g, 15s.</p></li>
-<li><p>Discard flow through.</p></li>
-<li><p>Add 200µl DNA/RNA Wash Buffer. Spin &gt;8000g, 15s.</p></li>
-<li><p>Discard flow through.</p></li>
-<li><p>Add 200µl DNA/RNA Wash Buffer. Spin &gt;8000g, 15s.</p></li>
-<li><p>Transfer column to a clean 1.7mL tube.</p></li>
-<li><p>Add <strong>14µl</strong> water. Spin 8000-16,000g, 1min.</p></li>
+<li><p>Wash 12µl Silane beads per sample 3 times in 500µl GuSCN Lysis Buffer minimum, or 500µl GuSCN Lysis buffer per 120µl beads.</p></li>
+<li><p>After removing final wash, resuspend beads in 60µl GuSCN Lysis Buffer per sample.</p></li>
+<li><p>Add 60µl beads to each sample. Pipette up and down to mix.</p></li>
+<li><p>Incubate 1min, room temperature.</p></li>
+<li><p>Add 50µl 100% ethanol. Pipette up and down to mix.</p></li>
+<li><p>Incubate 3min, room temperature.</p></li>
+<li><p>Place tubes on magnetic rack and wait until solution clears.</p></li>
+</ol>
+<ol class="loweralpha simple" start="5">
+<li><p>Remove supernatant. Wash beads three times with 150µl 80% ethanol if using strip tubes, or 250µl 80% ethanol if using 1.7mL tubes.</p></li>
+<li><p>After removing final wash, pop-spin then place the tube back on the magnet. Use a P20 pipette to remove any residual ethanol.</p></li>
+<li><p>Dry the beads 5-10min until they look matte.</p></li>
+<li><p>Resuspend the beads in <strong>13µl</strong> nuclease-free water to elute.</p></li>
 </ol>
 </li>
 </ol>
 </section>
-<section id="adapter-ligation">
-<h2>Adapter Ligation<a class="headerlink" href="#adapter-ligation" title="Permalink to this heading"></a></h2>
+<section id="reverse-transcription">
+<h2>Reverse Transcription<a class="headerlink" href="#reverse-transcription" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
-<li><p>Adapter Ligation Reaction</p>
-<p>14µl dA-tailed DNA</p>
-<p>1µl 10µM Y-adapter</p>
+<li><p>Annealing Reaction</p>
+<p>12.5µl RNA sample</p>
+<p>1µl 5µM AR17</p>
+<p>1µl 10mM dNTPs</p>
+</li>
+<li><p>Heat 2min, 65°C then cool to 4°C.</p></li>
+<li><p>Add 5.5µl RT Master Mix.</p>
+<p>4µl 5x Maxima RT Buffer</p>
+<p>1µl Maxima RT RNaseH Minus</p>
+<p>0.5µl RNase inhibitor</p>
+</li>
+<li><p>Incubate 30min, 50°C then cool to 4°C.</p></li>
+<li><p>Add 4µl Exonuclease I to digest excess AR17. Incubate 15min, 37°C.</p></li>
+<li><p>Add 1µl 0.5M EDTA to inactivate Exonuclease I.</p></li>
+<li><p>Place on ice for 3min.</p></li>
+<li><p>Add 2.5µl 1M NaOH.</p></li>
+<li><p>Heat 6min, 80°C to degrade RNA, then cool to 4°C.</p></li>
+<li><p>Add 2.5µl 1M HCl to neutralize base.</p></li>
+<li><p>Clean using Silane beads.</p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Wash 12µl Silane beads per sample 3 times in 500µl GuSCN Lysis Buffer minimum, or 500µl GuSCN Lysis buffer per 120µl beads.</p></li>
+<li><p>After removing final wash, resuspend beads in 90µl GuSCN Lysis Buffer per sample.</p></li>
+<li><p>Add 90µl beads to each sample. Pipette up and down to mix.</p></li>
+<li><p>Incubate 1min, room temperature.</p></li>
+<li><p>Add 75µl 100% ethanol. Pipette up and down to mix.</p></li>
+<li><p>Incubate 3min, room temperature.</p></li>
+<li><p>Place tubes on magnetic rack and wait until solution clears.</p></li>
+</ol>
+<ol class="loweralpha simple" start="5">
+<li><p>Remove supernatant. Wash beads three times with 150µl 80% ethanol if using strip tubes, or 250µl 80% ethanol if using 1.7mL tubes.</p></li>
+<li><p>After removing final wash, pop-spin then place the tube back on the magnet. Use a P20 pipette to remove any residual ethanol.</p></li>
+<li><p>Dry the beads 5-10min until they look matte.</p></li>
+<li><p>Resuspend the beads in 13µl nuclease-free water to elute.</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="cdna-splint-ligation">
+<h2>cDNA Splint Ligation<a class="headerlink" href="#cdna-splint-ligation" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Ligation Reaction</p>
+<p>2µl 4.5µM 3Tr3 Splint</p>
+<p>13µl cDNA</p>
 <p>15µl 2x Instant Sticky-End Master Mix</p>
 </li>
-<li><p>Incubate 10min, 25°C.</p></li>
+<li><p>Incubate 30min, 25°C</p></li>
 <li><p>SPRI clean to remove adapter.</p>
 <ol class="loweralpha simple">
 <li><p>Add 1x volume room-temperature SPRI beads (30µl) to the reaction. Flick and pop-spin the tube 3 times to mix.</p></li>
@@ -224,14 +304,13 @@
 <li><p>Resuspend beads in <strong>50µl</strong> nuclease-free water to elute. Magnetically pellet the beads and transfer the supernatant to a clean tube.</p></li>
 </ol>
 </li>
-<li><p>Repeat 1x SPRI clean in step 3 using 50µl room-temperature SPRI beads. This ensures that nearly all adapter is removed. Elute in <strong>50µl</strong> water. 22.5µl will be used for amplification, and the rest will be saved in case of over-amplification.</p></li>
 </ol>
 </section>
 <section id="library-amplification">
 <h2>Library Amplification<a class="headerlink" href="#library-amplification" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Library PCR Reaction</p>
-<p>22.5µl ligated DNA</p>
+<p>22.5µl ligated cDNA</p>
 <p>2.5µl 12.5µM i7 F x i5 R Broad Primers</p>
 <p>25µl 2x Q5 High-Fidelity Master Mix</p>
 </li>
@@ -305,9 +384,9 @@
 <ol class="arabic simple">
 <li><p>Measure concentration of library with Qubit High Sensitivity.</p></li>
 <li><p>Measure size distribution by loading 1ng library on a HS D1000 TapeStation Tape or a HS DNA Bioanalyzer chip.</p></li>
-<li><p>For standard DNA fragmentation, the library should show a unimodal distribution with an average size between 300-500bp and a tail to the right. Little if any DNA should have sizes greater than 1000bp. See the image below for an example of a high quality library, and one that has been over-amplified, resulting in a multimodal distribution.</p></li>
+<li><p>For standard RNA fragmentation, the library should show a unimodal distribution with an average size between 300-500bp and a tail to the right. For methods with high temperature washes (e.g. CLAP) the average sizes may be smaller. Little if any DNA should have sizes greater than 1000bp. See the image below for an example of a typical library.</p></li>
 </ol>
-<a class="reference internal image-reference" href="../_images/DNA_Library_Trace_Figure.png"><img alt="High and low quality DNA library traces" class="align-center" src="../_images/DNA_Library_Trace_Figure.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/RNA_Library_Trace.png"><img alt="Example RNA library trace" class="align-center" src="../_images/RNA_Library_Trace.png" style="width: 500px;" /></a>
 <br></section>
 <section id="final-library-preparation">
 <h2>Final Library Preparation<a class="headerlink" href="#final-library-preparation" title="Permalink to this heading"></a></h2>
@@ -350,8 +429,10 @@
 <h2>Hazards and Waste Disposal<a class="headerlink" href="#hazards-and-waste-disposal" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Consult the Safety Data Sheet for any unfamiliar reagents and comply with local regulations regarding disposal of hazardous waste.</p></li>
-<li><p>Zymo DNA Binding Buffer contains guanidine hydrochloride (GuHCl), a powerful chaotrope. Always wear gloves and a labcoat when handling GuHCl. Do not open solid GuHCl outside of a fume hood and dispose of all liquid and solid waste in dedicated containers.</p></li>
+<li><p>Zymo RNA Binding Buffer contains guanidine hydrochloride (GuHCl), a powerful chaotrope. Always wear gloves and a labcoat when handling GuHCl. Do not open solid GuHCl outside of a fume hood and dispose of all liquid and solid waste in dedicated containers.</p></li>
 <li><p>Solutions containing GuHCl produce chlorine gas when mixed with bleach or other oxidizers. Be mindful of keeping these reagents separate.</p></li>
+<li><p>GuSCN is a powerful chaotrope. Always wear gloves and a labcoat when handling GuSCN. Do not open solid GuSCN outside of a fume hood and dispose of all liquid and solid waste in dedicated containers.</p></li>
+<li><p>GuSCN solutions release hydrogen cyanide gas when exposed to acids or oxidizers such as bleach. Always use caution when preparing or disposing of GuSCN solutions.</p></li>
 </ul>
 </section>
 </section>
@@ -360,8 +441,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="rnalibrary.html" class="btn btn-neutral float-right" title="RNA Library Preparation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dnalibrary.html" class="btn btn-neutral float-left" title="DNA Library Preparation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rnamini.html" class="btn btn-neutral float-right" title="RNA Miniprep" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

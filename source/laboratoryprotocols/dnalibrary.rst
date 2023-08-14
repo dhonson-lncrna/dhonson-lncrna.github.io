@@ -3,6 +3,17 @@ DNA Library Preparation
 
 This protocol describes how to make dual-indexed Illumina sequencing libraries from fragmented DNA (e.g. ChIP-seq or RAP-DNA libraries). It is an adaptation of the NEBNext DNA library preparation kit and uses some of the same components. The resultant libraries should be sequenced with settings for Illumina's Nextera XT kit.
 
+.. figure:: images/23.08.14_DNA-Lib-Fig.png
+   :width: 600
+   :alt: Schematic of DNA lib workflow
+   :align: center
+
+   *Schematic of library prep workflow*
+
+.. raw:: html
+
+   <br>
+
 Buffers and Consumables
 -----------------------
 
@@ -42,7 +53,7 @@ Buffers and Consumables
 
 **Nextera XT i5i7 Y-adapt TOP:** /5Phos/GATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
 
-**Nextera XT  Y-adapt BOT:** GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT[GCTCTTCCGATC]T
+**Nextera XT  Y-adapt BOT:** GTGACTGGAGTTCAGACGTGT[GCTCTTCCGATC]T
 
 **Nextera XT i7 F and i5 R primers, 12.5µM mix (see Protocol Notes)**
 
@@ -62,7 +73,7 @@ For Final Library Preparation
 
    I'm currently testing an in-house version of this. I'm pretty sure it's 4M NaI
 
-Adaptor Annealing
+Adapter Annealing
 -----------------
 
 The Y-adapt TOP and BOT contain overhangs for the Nextera Illumina primers. Y-adapt TOP contains the i5 sequence while BOT contains the i7 sequence. The sequence in brackets in Broad i5i7 Y-adapt BOT anneals to Y-adapt TOP. After annealing, the product contains a 3'-T overhang for ligation to end-repaired and dA-tailed DNA fragments.
