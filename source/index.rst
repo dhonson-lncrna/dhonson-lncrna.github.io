@@ -23,6 +23,12 @@ My name is Drew Honson. I am a fifth year graduate student in the laboratory of 
    laboratoryprotocols/rnalibrary
    laboratoryprotocols/rnamini
    laboratoryprotocols/silane
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Software Packages
+
+   softwarepackages/rapprobesdemo.ipynb
  
 .. toctree::
    :maxdepth: 1
