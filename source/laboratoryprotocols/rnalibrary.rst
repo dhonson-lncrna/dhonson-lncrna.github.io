@@ -15,58 +15,21 @@ The workflow begins by fragmenting RNA to sizes between 100-1000bp and dephospho
 
    <br>
 
-Buffers and Consumables
------------------------
+Materials
+---------
 
-**ThermoFisher Fast AP (alkaline phosphatase) and 10x Fast AP buffer**
+In-House Reagents
+^^^^^^^^^^^^^^^^^
 
-**Ribolock or other RNase inhibitor**
+`Buffer calculator <https://docs.google.com/spreadsheets/d/14t-B8F6yNJ7xcO8kBrjlpoRxs6Zq3iMc/edit?usp=sharing&ouid=110781881215035430006&rtpof=true&sd=true>`_
 
-**NEB T4 PNK (Phosphonucleotide Kinase) and 10x T4 PNK buffer**
+10x Annealing Buffer
 
-**NEB T4 High Concentration RNA Ligase and 10x T4 RNA Ligase buffer**
+   100mM Tris-HCl, pH 7.5
 
-**100mM ATP**
+   2M LiCl
 
-**50% PEG8000**
-
-**ThermoFisher Maxima H Minus RT and 5x RT buffer**
-   
-   The exact reverse transcriptase is flexible but it must **lack** RNaseH activity
-
-**10mM dNTP Mix**
-
-**NEB Exonuclease I**
-
-**0.5M EDTA, pH8.0**
-
-**1M NaOH**
-
-**1M HCl**
-
-**DMSO**
-
-**100% ethanol**
-
-**80% ethanol**
-
-**Zymo RNA Binding Buffer**
-
-  I am working on an in-house formulation for this.
-
-**Zymo RNA Prep Buffer**
-
-  I am working on an in-house formulation for this
-
-**Wash Buffer 2**
-
-   80% ethanol
-
-   100mM NaCl
-
-   10mM Tris-HCl, pH7.5
-
-**GuSCN Lysis Buffer**
+GuSCN Lysis Buffer
 
    4M guanidinium thiocyanate (GuSCN)
 
@@ -76,33 +39,102 @@ Buffers and Consumables
 
    3% Triton X-100
 
-**10x Annealing Buffer**
+Wash Buffer 2
 
-   100mM Tris-HCl, pH 7.5
+   80% ethanol
 
-   2M LiCl
+   100mM NaCl
 
-**NEB 2x Instant Sticky-End Master Mix**
+   10mM Tris-HCl, pH7.5
 
-**NEB 2x Q5 High Fidelity Master Mix**
+100% ethanol
 
-**Zymo IC Columns**
+80% ethanol
 
-**Zymo Collection Tubes**
+500mM EDTA, pH8.0
 
-**ThermoFisher Dynabeads MyOne Silane**
+1M NaOH
 
-**SPRI beads (Beckman Coulter or Bulldog Bio)**
+1M HCl
 
-**Nextera XT i7 F and i5 R primers, 12.5µM mix (see Protocol Notes)**
+DMSO
 
-**RiL19 (RNA Ligation Adapter): /5Phos/rArGrArUrCrGrGrArArGrArGrCrGrUrCrGrUrG/ddC**
+Commercial Reagents 
+^^^^^^^^^^^^^^^^^^^
 
-**AR17 (RT Primer): ACACGACGCTCTTCCGA**
+NEB 100mM ATP
 
-**3Tr3 Splint TOP (cDNA ligation adapter): CAGACGTGTGCTCTTCCGATCTNNNNNN/3SpC3/**
+NEB 10mM dNTP Mix
 
-**3Tr3 Splint BOT (cDNA ligation adapter): /5Phos/AGATCGGAAGAGCACACGTCTG**
+NEB 2x Instant Sticky-End Master Mix
+
+NEB 2x Q5 High Fidelity Master Mix
+
+NEB 50% PEG8000
+
+NEB Exonuclease I
+
+NEB T4 PNK and 10x buffer
+
+NEB T4 High Concentration RNA Ligase and 10x buffer
+
+ThermoFisher Fast AP and 10x buffer
+
+ThermoFisher Maxima H Minus RT and 5x RT buffer
+
+   The exact reverse transcriptase is flexible but it must **lack** RNaseH activity
+
+ThermoFisher Ribolock (or other RNase inhibitor)
+
+Zymo RNA Binding Buffer
+
+Zymo RNA Prep Buffer
+
+Plastics and Beads
+^^^^^^^^^^^^^^^^^^
+
+SPRI beads (Beckman Coulter or Bulldog Bio)
+
+ThermoFisher Dynabeads MyOne Silane
+
+Zymo IC Columns
+
+Zymo Collection Tubes
+
+Oligonucleotides
+^^^^^^^^^^^^^^^^
+
+RiL19 (RNA Ligation Adapter): 
+
+   /5Phos/rArGrArUrCrGrGrArArGrArGrCrGrUrCrGrUrG/ddC
+
+AR17 (RT Primer): 
+
+   ACACGACGCTCTTCCGA
+
+3Tr3 Splint TOP (cDNA ligation adapter): 
+
+   CAGACGTGTGCTCTTCCGATCTNNNNNN/3SpC3/
+
+3Tr3 Splint BOT (cDNA ligation adapter): 
+
+   /5Phos/AGATCGGAAGAGCACACGTCTG
+
+Nextera XT i7 F and i5 R primers, 12.5µM mix (see Protocol Notes)
+
+For Library Diagnostics
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Qubit HS DNA kit or other high-sensitivity spectrophotometer
+
+TapeStation, Bioanalyzer, or other high sensitivity electrophoresis instrument
+
+For Final Library Preparation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1-2% agarose gel
+
+Zymo ADB Buffer
 
 Adapter Annealing
 -----------------

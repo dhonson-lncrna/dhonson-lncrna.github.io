@@ -3,10 +3,15 @@ RNA Miniprep
 
 This protocol is intended to replace Qiagen's RNEasy Miniprep Kit. It has been tested in NIH3T3 cells and gives comparable yield and quality to the commercial kit. To steer clear of possible legal issues (and make the protocol more comprehensible) the names of buffers have been changed. The buffer formulations here are my best guess at Qiagen's formulas, but they may not be identical and therefore may perform differently in some cases. 
 
-Buffers and Consumables
+Materials
 -----------------------
 
-**GuSCN Lysis Buffer**
+In-House Reagents
+^^^^^^^^^^^^^^^^^
+
+`Buffer calculator <https://docs.google.com/spreadsheets/d/1EITWwn0JGvGQS48zH_d1t2Xg49ATznKb/edit?usp=sharing&ouid=110781881215035430006&rtpof=true&sd=true>`_
+
+GuSCN Lysis Buffer
 
    4M guanidinium thiocyanate (GuSCN)
 
@@ -16,7 +21,7 @@ Buffers and Consumables
 
    3% Triton X-100
 
-**Wash Buffer 1**
+Wash Buffer 1
 
    20% ethanol
 
@@ -24,7 +29,7 @@ Buffers and Consumables
 
    10mM Tris-HCl, pH 7.5
 
-**Wash Buffer 2**
+Wash Buffer 2
 
    80% ethanol
 
@@ -32,17 +37,21 @@ Buffers and Consumables
 
    10mM Tris-HCl, pH 7.5
 
-**70% ethanol**
+70% ethanol
 
-**Zymo IIC Columns**
+Plastics and Beads
+^^^^^^^^^^^^^^^^^^
 
-**Zymo Collection Tubes**
+Zymo IIC Columns
+
+Zymo Collection Tubes
 
 For DNase Treatment
--------------------
-**ThermoFisher Turbo DNase and 10x Turbo DNase Buffer**
+^^^^^^^^^^^^^^^^^^^
 
-**RNase Inhibitor (Ribolock or similar)**
+ThermoFisher Turbo DNase and 10x Turbo DNase Buffer
+
+RNase Inhibitor (Ribolock or similar)
 
 RNA Miniprep Protocol
 ---------------------

@@ -3,10 +3,15 @@ Silane Nucleic Acid Purification
 
 This protocol describes the purification of RNA, dsDNA, and ssDNA from solution using Silane beads. Silane are paramagnetic beads functionalized with silanol, a silica-based functional group. As such, they bind nucleic acids in a similar manner to silica columns. Silane bead extractions are more time-consuming than column clean-ups due to the time it takes for the beads to dry. They are, however, more scalable as multiple samples can be processed simultaneously in strip tubes using a multichannel pipette. 
 
-Buffers and Consumables
+Materials
 -----------------------
 
-**GuSCN Lysis Buffer**
+In-House Reagents
+^^^^^^^^^^^^^^^^^
+
+`Buffer calculation <https://docs.google.com/spreadsheets/d/1Pz6gXp8H8RrBGXYalYlve9Z-NV_xky45/edit?usp=sharing&ouid=110781881215035430006&rtpof=true&sd=true>`_
+
+GuSCN Lysis Buffer
 
    4M guanidinium thiocyanate (GuSCN)
 
@@ -16,11 +21,14 @@ Buffers and Consumables
 
    3% Triton X-100
 
-**100% ethanol**
+100% ethanol
 
-**80% ethanol**
+80% ethanol
 
-**ThermoFisher Dynabeads MyOne Silane**
+Plastics and Beads
+^^^^^^^^^^^^^^^^^^
+
+ThermoFisher Dynabeads MyOne Silane
 
 Nucleic Acid Purification Protocol
 ----------------------------------

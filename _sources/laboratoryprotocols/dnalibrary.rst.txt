@@ -14,14 +14,21 @@ This protocol describes how to make dual-indexed Illumina sequencing libraries f
 
    <br>
 
-Buffers and Consumables
+Materials
 -----------------------
 
-**Zymo DNA Binding Buffer**
+In-House Reagents
+^^^^^^^^^^^^^^^^^
 
-  I'm currently testing an in-house formulation of this
+`Buffer calculator <https://docs.google.com/spreadsheets/d/1XsZBwDW9_-XgDzVVm5SwegziqMZ3Bov1/edit?usp=sharing&ouid=110781881215035430006&rtpof=true&sd=true>`_
 
-**Wash Buffer 2**
+10x Annealing Buffer
+
+   100mM Tris-HCl, pH 7.5
+
+   2M LiCl
+
+Wash Buffer 2
 
    80% ethanol
 
@@ -29,49 +36,56 @@ Buffers and Consumables
 
    10mM Tris-HCl, pH7.5
 
-**10x Annealing Buffer**
+Commercial Reagents
+^^^^^^^^^^^^^^^^^^^
 
-   100mM Tris-HCl, pH 7.5
+NEBNext End Repair Module
 
-   2M LiCl
+NEBNext 10x dA-Tailing Buffer
 
-**NEBNext End Repair Module**
+NEBNext Klenow Fragment (exo-)
 
-**NEBNext 10x dA-Tailing Buffer**
+NEB 2x Instant Sticky-End Master Mix
 
-**NEBNext Klenow Fragment (exo-)**
+NEB 2x Q5 High-Fidelity 2x Master Mix
 
-**NEB 2x Q5 High-Fidelity 2x Master Mix**
+Zymo DNA Binding Buffer
 
-**NEB 2x Instant Sticky-End Master Mix**
+Plastics and Beads
+^^^^^^^^^^^^^^^^^^
 
-**SPRI beads, prewarmed to room temperature**
+SPRI beads, prewarmed to room temperature
 
-**Zymo IC Columns**
+Zymo IC Columns
 
-**Zymo Collection Tubes**
+Zymo Collection Tubes
 
-**Nextera XT i5i7 Y-adapt TOP:** /5Phos/GATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+Oligonucleotides
+^^^^^^^^^^^^^^^^
 
-**Nextera XT  Y-adapt BOT:** GTGACTGGAGTTCAGACGTGT[GCTCTTCCGATC]T
+Nextera XT i5i7 Y-adapt TOP: 
 
-**Nextera XT i7 F and i5 R primers, 12.5µM mix (see Protocol Notes)**
+   /5Phos/GATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+
+Nextera XT  Y-adapt BOT: 
+
+   GTGACTGGAGTTCAGACGTGT[GCTCTTCCGATC]T
+
+Nextera XT i7 F and i5 R primers, 12.5µM mix (see Protocol Notes)
 
 For Library Diagnostics
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
-**Qubit HS DNA kit or other high-sensitivity spectrophotometer**
+Qubit HS DNA kit or other high-sensitivity spectrophotometer
 
-**TapeStation, Bioanalyzer, or other high sensitivity electrophoresis instrument**
+TapeStation, Bioanalyzer, or other high sensitivity electrophoresis instrument
 
 For Final Library Preparation
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**1-2% agarose gel**
+1-2% agarose gel
 
-**Zymo ADB Buffer**
-
-   I'm currently testing an in-house version of this. I'm pretty sure it's 4M NaI
+Zymo ADB Buffer
 
 Adapter Annealing
 -----------------
